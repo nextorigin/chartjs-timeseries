@@ -1,0 +1,28 @@
+{
+  "name": "chartjs-timeseries",
+  "version": "1.0.0",
+  "description": "Animated scrolling timeseries chart using ChartJS",
+  "main": "./chartjs-timeseries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nextorigin/chartjs-timeseries.git"
+  },
+  "keywords": [
+    "chartjs",
+    "charts",
+    "timeseries",
+    "animated",
+    "scrolling",
+    "plotting",
+    "graph"
+  ],
+  "author": "doublerebel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nextorigin/chartjs-timeseries/issues"
+  },
+  "homepage": "https://github.com/nextorigin/chartjs-timeseries#readme"
+}
