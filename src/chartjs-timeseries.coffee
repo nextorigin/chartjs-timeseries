@@ -14,14 +14,16 @@ class TimeSeriesDatasetController extends Chart.controllers.line
     super
 
   prepareForUpdate: ->
-    @_lastData = @getMeta().data
+    # make a copy so we can delete used indices
+    @_lastData = @getMeta().data[0..]
 
   updateElement: (point, index, reset) ->
     super
     return unless @_lastData
     oldposition = if @direction isnt "rtl" then index - 1 else index + 1
-    oldpoint    = @_lastData[oldposition]
-    point._view = oldpoint._view if oldpoint
+    if oldpoint = @_lastData[oldposition]
+      point._view = oldpoint._view
+      @_lastData[oldposition] = null
 
 
 Chart.controllers.timeseries = TimeSeriesDatasetController
