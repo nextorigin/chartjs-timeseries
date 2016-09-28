@@ -63,7 +63,7 @@ class TimeSeries extends Chart.Controller
     config.options = helpers.configMerge defaults, config.options
     ## BUGFIX for when types are set or we get doubled axiis from Chart.defaults.global
     ## when Chart.core.controller calls helpers.configMerge
-    delete config.options?.scales?.xAxes?[0]?.type
+    # delete config.options?.scales?.xAxes?[0]?.type
     delete config.options?.scales?.yAxes?[0]?.type
 
     ## DEPRECATED after 2.3.0
