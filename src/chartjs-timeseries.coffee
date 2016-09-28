@@ -104,7 +104,22 @@ class TimeSeries extends Chart.Controller
 
     super me
 
+  buildOrUpdateDatasetController: (dataset, datasetIndex) ->
+    meta = @getDatasetMeta datasetIndex
+
+    unless meta.type
+      meta.type = dataset.type or @config.type
+
+    if meta.controller
+      meta.controller.updateIndex datasetIndex
+    else
+      meta.controller = new Chart.controllers[meta.type] this, datasetIndex
+
+    # meta.controller.buildOrUpdateElements()
+    meta.controller.reset()
+    meta.controller
+
   prepareForUpdate: ->
     for dataset, i in @data.datasets
       {controller} = @getDatasetMeta i
-      controller?.prepareForUpdate()
+      controller.prepareForUpdate()
