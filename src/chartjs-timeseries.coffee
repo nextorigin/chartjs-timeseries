@@ -46,7 +46,7 @@ class TimeSeries extends Chart.Controller
     xTickCallback = (value) ->
       if value.toString().length > 0 then value else null
     yTickCallback = (value) ->
-      if (typeof value is "number") then (Chart.ticks.formatters.linear arguments...) else null
+      if (typeof value is "number") then (Chart.Ticks.formatters.linear arguments...) else null
     ## BUGFIX we have to set scale types or they won't be merged
     defaultScaleType = "linear"
     xScale = config.options?.scales?.xAxes?[0]
